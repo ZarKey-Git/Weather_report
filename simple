@@ -1,0 +1,31 @@
+class Weather(object):
+    def __init__(self, temperature, wind_speed, wind_direction):
+        self.temperature = temperature
+        self.wind_speed = wind_speed
+        self.wind_direction = wind_direction
+
+
+class VerbalWeather(Weather):
+    def check_temp(self):
+        if self.temperature > 20:
+            return "It's warm."
+        else:
+            return "it's not warm."
+
+    def check_wind(self):
+        if self.wind_speed > 30:
+            return "It's windy."
+        else:
+            return "It's not windy."
+
+    def report(self):
+        temp_status = self.check_temp()
+        wind_status = self.check_wind()
+        print(f"Today weather report is: temperature {self.temperature} d. c that means {temp_status},"
+              f" and wind_speed: {self.wind_speed} km/h that means {wind_status}, from {self.wind_direction}")
+
+today_temperature = int(input("enter temperature:"))
+today_wind_speed = int(input("enter wind_speed:"))
+today_wind_direction = (input("enter wind_direction:"))
+weather_objects = VerbalWeather(today_temperature, today_wind_speed, today_wind_direction)
+weather_objects.report()
