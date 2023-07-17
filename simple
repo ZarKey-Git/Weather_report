@@ -10,7 +10,7 @@ class VerbalWeather(Weather):
         if self.temperature > 20:
             return "It's warm."
         else:
-            return "it's not warm."
+            return "It's not warm."
 
     def check_wind(self):
         if self.wind_speed > 30:
@@ -19,10 +19,8 @@ class VerbalWeather(Weather):
             return "It's not windy."
 
     def report(self):
-        temp_status = self.check_temp()
-        wind_status = self.check_wind()
-        print(f"Today weather report is: temperature {self.temperature} d. c that means {temp_status},"
-              f" and wind_speed: {self.wind_speed} km/h that means {wind_status}, from {self.wind_direction}")
+        print(f"Today weather report is: temperature {self.temperature} d. c that means {self.check_temp()},"
+              f" and wind_speed: {self.wind_speed} km/h that means {self.check_wind()}, wind blows from {self.wind_direction}")
 
 today_temperature = int(input("enter temperature:"))
 today_wind_speed = int(input("enter wind_speed:"))
